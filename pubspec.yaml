@@ -40,9 +40,7 @@ flutter:
   assets:
     - assets/
     - assets/onboarding/
-    - assets/svg/
-    - assets/svg/onboarding/
-    - assets/icons/
+    - assets/images/
     - assets/auth/
 
   # fonts:

@@ -3,8 +3,6 @@ import 'package:vital/helpers/constant.dart';
 import 'package:vital/helpers/screen_navigation.dart';
 import 'package:vital/screens/auth_screens/login_screen.dart';
 import 'package:vital/screens/bottom_navigaton_screen/bottom_navigation_screen.dart';
-import 'package:vital/screens/bottom_navigaton_screen/home_screens/home_screen.dart';
-import 'package:vital/widgets/bordered_text_field.dart';
 import 'package:vital/widgets/custom_text.dart';
 import 'package:vital/widgets/custom_textfield.dart';
 import '../../../widgets/custom_button.dart';
@@ -19,7 +17,6 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
 
   @override
