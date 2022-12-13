@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vital/helpers/screen_navigation.dart';
+import 'package:vital/screens/bottom_navigaton_screen/shopping_screens/checkout_screen.dart';
 import 'package:vital/widgets/custom_text.dart';
 
 import '../../../helpers/constant.dart';
@@ -40,15 +42,19 @@ class ShoppingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ShoppingCard(),
-                  ShoppingCard(),
-                  ShoppingCard(),
+                  const ShoppingCard(),
+                  const ShoppingCard(),
+                  const ShoppingCard(),
                   const SizedBox(
                     height: 10,
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Image.asset('assets/images/Card.png'),
+                  GestureDetector(
+                    onTap: () => changeScreen(context, CheckoutScreen()),
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 60),
+                      alignment: Alignment.bottomCenter,
+                      child: Image.asset('assets/images/Card.png'),
+                    ),
                   )
                 ],
               ),

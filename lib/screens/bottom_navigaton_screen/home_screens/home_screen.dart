@@ -119,19 +119,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         InterestedCard(
                           image: 'eyes',
                           function: () {
-                            changeScreen(context, const ItemSelectedScreen());
+                            changeScreen(
+                                context,
+                                const ItemSelectedScreen(
+                                  image: 'eyes',
+                                  name: 'eyes closed',
+                                  price: '100',
+                                ));
                           },
                         ),
                         InterestedCard(
                           image: 'a',
                           function: () {
-                            changeScreen(context, const ItemSelectedScreen());
+                            changeScreen(
+                                context,
+                                const ItemSelectedScreen(
+                                  image: 'a',
+                                  name: 'eyes closed',
+                                  price: '100',
+                                ));
                           },
                         ),
                         InterestedCard(
                           image: 'eyes',
                           function: () {
-                            changeScreen(context, const ItemSelectedScreen());
+                            changeScreen(
+                                context,
+                                const ItemSelectedScreen(
+                                  image: 'eyes',
+                                  name: 'eyes closed',
+                                  price: '100',
+                                ));
                           },
                         )
                       ],
