@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vital/helpers/constant.dart';
+import 'package:vital/helpers/screen_navigation.dart';
+import 'package:vital/screens/bottom_navigaton_screen/home_screens/item_selected_screen.dart';
 import 'package:vital/widgets/custom_round_button.dart';
 import 'package:vital/widgets/custom_text.dart';
 
@@ -114,11 +116,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        InterestedCard(image: 'eyes'),
+                        InterestedCard(
+                          image: 'eyes',
+                          function: () {
+                            changeScreen(context, const ItemSelectedScreen());
+                          },
+                        ),
                         InterestedCard(
                           image: 'a',
+                          function: () {
+                            changeScreen(context, const ItemSelectedScreen());
+                          },
                         ),
-                        InterestedCard(image: 'eyes')
+                        InterestedCard(
+                          image: 'eyes',
+                          function: () {
+                            changeScreen(context, const ItemSelectedScreen());
+                          },
+                        )
                       ],
                     ),
                   ),
@@ -186,52 +201,57 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class InterestedCard extends StatelessWidget {
-  const InterestedCard({Key? key, required this.image}) : super(key: key);
+  const InterestedCard({Key? key, required this.image, required this.function})
+      : super(key: key);
   final String image;
+  final Function function;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5),
-      width: 160,
-      height: 230,
-      padding: const EdgeInsets.all(10),
-      decoration:
-          BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 80,
-            child: Center(child: Image.asset('assets/images/$image.png')),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const CustomText(
-                text: 'Eyes closed',
-                size: 14,
-              ),
-              IconButton(
-                  onPressed: () {},
-                  icon: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.shop,
-                      size: 17,
-                      color: yellow,
-                    ),
-                  ))
-            ],
-          ),
-          const CustomText(
-            text: "\$9.99",
-          )
-        ],
+    return GestureDetector(
+      onTap: () => function(),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 5),
+        width: 160,
+        height: 230,
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: yellow, borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 80,
+              child: Center(child: Image.asset('assets/images/$image.png')),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CustomText(
+                  text: 'Eyes closed',
+                  size: 14,
+                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.shop,
+                        size: 17,
+                        color: yellow,
+                      ),
+                    ))
+              ],
+            ),
+            const CustomText(
+              text: "\$9.99",
+            )
+          ],
+        ),
       ),
     );
   }

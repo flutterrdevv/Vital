@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vital/screens/auth_screens/login_screen.dart';
 import 'package:vital/screens/bottom_navigaton_screen/bottom_navigation_screen.dart';
-import 'package:vital/screens/bottom_navigaton_screen/home_screens/home_screen.dart';
 import 'package:vital/screens/onboard_screens/onboard1_screen.dart';
 
 void main() {
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoardScreen1(),
+      home: const BottomNavigationScreen(),
     );
   }
 }
