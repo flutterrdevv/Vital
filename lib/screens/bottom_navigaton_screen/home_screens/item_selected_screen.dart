@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vital/widgets/custom_button.dart';
-import 'package:vital/widgets/custom_round_button.dart';
 import 'package:vital/widgets/custom_text.dart';
 import '../../../helpers/constant.dart';
 

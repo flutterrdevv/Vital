@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vital/helpers/constant.dart';
 import 'package:vital/helpers/screen_navigation.dart';
 import 'package:vital/screens/bottom_navigaton_screen/home_screens/item_selected_screen.dart';
+import 'package:vital/screens/bottom_navigaton_screen/home_screens/search_screen.dart';
 import 'package:vital/widgets/custom_round_button.dart';
 import 'package:vital/widgets/custom_text.dart';
 
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     margin: const EdgeInsets.symmetric(vertical: 5),
                     child: TextFormField(
+                      onTap: () => changeScreen(context, const SearchScreen()),
                       cursorColor: white,
                       decoration: InputDecoration(
                         border: InputBorder.none,

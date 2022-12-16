@@ -24,7 +24,7 @@ class _BottomBarScreenState extends State<BottomNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     List<Widget> buildScreens() {
-      return [
+      return const [
         HomeScreen(),
         FavouriteScreen(),
         ScanScreen(),
